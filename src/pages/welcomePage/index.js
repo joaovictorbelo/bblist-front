@@ -1,15 +1,23 @@
 import { Text, View, Button, Image } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+
+import style from './style'
 
 export default function HomeScreen({ navigation }) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Image source={require('../../../assets/logoType.png')} />
-        <Text>BBlist</Text>
-        
-        <Button
-          title="Go to Details"
-          onPress={() => navigation.navigate('Details')}
-        />
-      </View>
-    );
+  const change = () => {() => navigation.navigate('Details')}
+
+  return (
+    <View style={style.container}>
+      <LinearGradient
+        colors={['#FFB7B8', '#4F7BC5']}
+        style={style.background}
+      />
+      <Image style={style.logo} source={require('../../../assets/logoType.png')} />
+      <Text style={style.text}>
+        Ofertas
+        <Text style={{fontWeight: 'bold'}}> exclusivas </Text>
+        todo mês
+      </Text>
+    </View>
+  );
   }
