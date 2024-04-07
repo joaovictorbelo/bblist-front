@@ -5,7 +5,7 @@ export default styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
     },
     background: {
         position: 'absolute',
@@ -16,10 +16,14 @@ export default styles = StyleSheet.create({
     },
     logo: {
         width: '60%',
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        marginBottom: 50
     },
     text: {
+        position: 'absolute',
         color: 'white',
-        fontFamily: 'Montserrat-Regular'
+        fontFamily: 'Montserrat',
+        fontSize: 22,
+        bottom: 35
     }
   });

@@ -1,10 +1,15 @@
-import { Text, View, Button, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import { useEffect } from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 
 import style from './style'
 
 export default function HomeScreen({ navigation }) {
-  const change = () => {() => navigation.navigate('Details')}
+  const change = () => navigation.navigate('Login')
+
+  useEffect(()=>{
+    setInterval(change, 3000)
+  }, [])
 
   return (
     <View style={style.container}>
@@ -15,7 +20,7 @@ export default function HomeScreen({ navigation }) {
       <Image style={style.logo} source={require('../../../assets/logoType.png')} />
       <Text style={style.text}>
         Ofertas
-        <Text style={{fontWeight: 'bold'}}> exclusivas </Text>
+        <Text style={{fontFamily: 'Montserrat-bold'}}> exclusivas </Text>
         todo mês
       </Text>
     </View>
