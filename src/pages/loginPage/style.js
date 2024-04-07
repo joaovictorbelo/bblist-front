@@ -6,12 +6,12 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 20
+        paddingBottom: 30
     },
     logo: {
-        height: '10%',
+        height: '8%',
         resizeMode: 'contain',
-        marginTop: 30
+        marginTop: 50
     },
     loginForm:{
         width: '90%',
@@ -26,5 +26,13 @@ export default styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         marginBottom: 30
+    },
+    links: {
+        marginTop: 8,
+        marginBottom: 0,
+        marginLeft: 0,
+        marginRight: 0,
+        fontFamily: 'Montserrat',
+        color: "#407BDC",
     }
   });

@@ -20,17 +20,22 @@ export default class InputField extends React.Component {
           outlineColor='#E1E1E7'
           activeOutlineColor='#4D84DF'
           style={{
-            backgroundColor: '#E1E1E7',
-            fontFamily: 'Hind',
+            backgroundColor: 'rgba(165, 183, 223, 0.2)',
+            fontFamily: 'Hind-bold',
+            color: 'rgba(7, 21, 42, 0.5)',
             width: '100%',
             height: 60,
             margin: 10,
+          }}
+          contentStyle={{
+            fontFamily: 'Hind',
           }}
           selectionColor='blue'
           right={
             <TextInput.Icon
               icon={this.props.password ? 'eye' : this.props.icon}
               color="#a2a2a2"
+              style={{marginTop: 15}}
             />
           }
           secureTextEntry={this.props.password}

@@ -11,6 +11,7 @@ function App() {
     'Montserrat': require('./assets/fonts/Montserrat-Regular.ttf'),
     'Montserrat-bold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
     'Hind': require('./assets/fonts/Hind-Regular.ttf'),
+    'Hind-bold': require('./assets/fonts/Hind-SemiBold.ttf'),
   });
 
   if (!fontsLoaded && !fontError) {

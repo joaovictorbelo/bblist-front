@@ -2,6 +2,7 @@ import { Text, View, Image } from 'react-native';
 import { useState } from 'react';
 import InputField from '../../components/InputField';
 import ButtonSubmit from '../../components/ButtonSubmit';
+import { Button } from 'react-native-paper'
 
 import style from './style'
 
@@ -38,10 +39,18 @@ export default function LoginScreen() {
           label="Entrar"
           onClick={() => console.log('Pressed')}
         />
-        <Text>Esqueci a senha</Text>
+        <Button labelStyle={style.links} mode="text" onPress={() => console.log('Pressed')}>
+          Esqueci a senha
+        </Button>
       </View>
       
-      <Text>Ainda não é cadastrado? Registre-se</Text>
+      <Text style={{
+        fontFamily: 'Montserrat',
+      }}>Ainda não é cadastrado? {' '}
+        <Button labelStyle={style.links} mode="text" onPress={() => console.log('Pressed')}>
+           Crie sua conta
+        </Button>
+      </Text>
     </View>
   );
   }

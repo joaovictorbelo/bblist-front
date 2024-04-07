@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Button } from 'react-native-paper'
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default class ButtonSubmit extends React.Component { 
   constructor(props) {
@@ -8,30 +9,37 @@ export default class ButtonSubmit extends React.Component {
   }
   render() { 
     return (
-      <Button
-        mode="contained"
-        onPress={this.props.onClick}
-        buttonColor="#407BDC"
-        loading={this.props.loading || false}
-        contentStyle={{
-          height: 60,
-        }}
+      <LinearGradient colors={["#407BDC", '#85AEEA']}
         style={{
-          width: '70%',
-          height: 50,
-          justifyContent: 'center',
           borderRadius: 50,
-          marginTop: 60,
+          width: '80%',
+          marginTop: 40,
           marginBottom: 20
-        }}
-        labelStyle={{
-          fontFamily: 'Hind',
-          fontWeight: "bold",
-          fontSize: 18
-        }}
+        }} 
+        start={{ y: 1, x: 1 }} end={{ y: 0, x: 1 }}
       >
-        {this.props.label}
-      </Button>
+        <Button
+          mode="contained"
+          onPress={this.props.onClick}
+          buttonColor="transparent"
+          loading={this.props.loading || false}
+          contentStyle={{
+            height: 60,
+          }}
+          style={{
+            width: '100%',
+            borderRadius: 50,
+            height: 60
+          }}
+          labelStyle={{
+            fontFamily: 'Hind',
+            fontWeight: 'bold',
+            fontSize: 18,
+          }}
+        >
+          {this.props.label}
+        </Button>
+      </LinearGradient>
     )
   }
 }
