@@ -6,10 +6,10 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingBottom: 30,
+        paddingBottom: 30
     },
     logo: {
-        height: '9%',
+        height: '8%',
         resizeMode: 'contain',
         marginTop: 50
     },
@@ -25,10 +25,10 @@ export default styles = StyleSheet.create({
         fontFamily: 'Montserrat',
         fontSize: 20,
         textAlign: 'center',
-        marginVertical: 30,
+        marginBottom: 30
     },
     links: {
-        marginTop: 10,
+        marginTop: 8,
         marginBottom: 0,
         marginLeft: 0,
         marginRight: 0,

@@ -13,14 +13,13 @@ export default class InputField extends React.Component {
           mode='outlined'
           value={this.props.value}
           onChangeText={text => this.props.onChange(text)}
-          underlineColor='white'
           outlineStyle={{
             borderRadius: 20,
           }}
           outlineColor='#E1E1E7'
           activeOutlineColor='#4D84DF'
           style={{
-            backgroundColor: 'rgba(165, 183, 223, 0.2)',
+            backgroundColor: '#e1e6eb',
             fontFamily: 'Hind-bold',
             color: 'rgba(7, 21, 42, 0.5)',
             width: '100%',
@@ -30,7 +29,6 @@ export default class InputField extends React.Component {
           contentStyle={{
             fontFamily: 'Hind',
           }}
-          selectionColor='blue'
           right={
             <TextInput.Icon
               icon={this.props.password ? 'eye' : this.props.icon}

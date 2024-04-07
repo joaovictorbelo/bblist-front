@@ -47,7 +47,7 @@ export default function LoginScreen({ navigation }) {
       <Text style={{
         fontFamily: 'Montserrat',
       }}>Ainda não é cadastrado? {' '}
-        <Button labelStyle={style.links} mode="text" onPress={() => navigation.navigate('Signin')}>
+        <Button labelStyle={style.links} mode="text" onPress={() => console.log('Pressed')}>
            Crie sua conta
         </Button>
       </Text>
