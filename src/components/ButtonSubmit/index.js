@@ -19,6 +19,7 @@ export default class ButtonSubmit extends React.Component {
       >
         <Button
           mode="contained"
+          disabled={this.props.disabled}
           onPress={this.props.onClick}
           buttonColor="transparent"
           loading={this.props.loading || false}
@@ -43,4 +44,9 @@ export default class ButtonSubmit extends React.Component {
   }
 }
 
-ButtonSubmit.propTypes = { label: PropTypes.string.isRequired, onClick: PropTypes.func.isRequired, loading: PropTypes.bool };
+ButtonSubmit.propTypes = {
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
+  disabled: PropTypes.bool
+};

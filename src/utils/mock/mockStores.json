@@ -1,0 +1,18 @@
+{
+    "Users": [
+        {
+            "email": "jvblb@hotmail.com",
+            "pass": "Marcelas2!",
+            "name": "Loja do bebe",
+            "contact": "",
+            "tel": "João Belo",
+            "insc": "1234567895",
+            "cnpj": "1234864125",
+            "cep": "52020095",
+            "state": "PE",
+            "city": "Recife",
+            "address": "Rua santo Elias, 260, apt 2002",
+            "reg": "NE"
+        }
+    ]
+}

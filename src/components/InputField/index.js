@@ -7,7 +7,7 @@ export default class InputField extends React.Component {
   constructor(props) {
     super(props);
   }
-  render() { 
+  render() {
     return (
       <View style={{width: '100%'}}>
         <TextInput
@@ -37,10 +37,11 @@ export default class InputField extends React.Component {
           selectionColor='blue'
           right={
             <TextInput.Icon
-              icon={this.props.password ? 'eye' : this.props.icon}
+              icon={this.props.icon}
               color="#a2a2a2"
               style={{marginTop: 15}}
-              disabled={true}
+              disabled={!['eye', 'eye-off'].includes(this.props.icon)}
+              onPress={this.props.iconAction}
             />
           }
           secureTextEntry={this.props.password}
@@ -57,6 +58,7 @@ InputField.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  iconAction: PropTypes.func,
   icon: PropTypes.string,
   password: PropTypes.bool,
   error: PropTypes.bool,
