@@ -17,10 +17,10 @@ export default class AppHeader extends React.Component {
           mode="contained"
           iconColor="white"
           size={40}
-          onPress={() => console.log('Pressed')}
+          onPress={() => this.props.goBackButton()}
           style={{
             width: 50,
-            height: 50,
+            height: 40,
             backgroundColor: "#407BDC",
             fontSize: 40,
             borderRadius: 15
@@ -32,4 +32,4 @@ export default class AppHeader extends React.Component {
   }
 }
 
-AppHeader.propTypes = { };
+AppHeader.propTypes = { goBackButton: PropTypes.func };

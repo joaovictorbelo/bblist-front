@@ -11,6 +11,7 @@ export default class InputField extends React.Component {
     return (
       <View style={{width: '100%'}}>
         <TextInput
+          editable={!this.props.locked}
           label={this.props.label}
           mode='outlined'
           value={this.props.value}
@@ -27,9 +28,11 @@ export default class InputField extends React.Component {
             color: 'rgba(7, 21, 42, 0.5)',
             width: '100%',
             height: 60,
+            lineHeight: 30
           }}
           contentStyle={{
             fontFamily: 'Hind',
+            height: 60,
           }}
           selectionColor='blue'
           right={
@@ -37,6 +40,7 @@ export default class InputField extends React.Component {
               icon={this.props.password ? 'eye' : this.props.icon}
               color="#a2a2a2"
               style={{marginTop: 15}}
+              disabled={true}
             />
           }
           secureTextEntry={this.props.password}
@@ -56,5 +60,6 @@ InputField.propTypes = {
   icon: PropTypes.string,
   password: PropTypes.bool,
   error: PropTypes.bool,
-  hText: PropTypes.string
+  hText: PropTypes.string,
+  locked: PropTypes.bool
 };
