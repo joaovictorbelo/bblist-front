@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
-import { TextInput } from 'react-native-paper'
+import { View } from 'react-native'
+import { TextInput, HelperText } from 'react-native-paper'
 
 export default class InputField extends React.Component { 
   constructor(props) {
@@ -8,27 +9,29 @@ export default class InputField extends React.Component {
   }
   render() { 
     return (
+      <View style={{width: '100%'}}>
         <TextInput
           label={this.props.label}
           mode='outlined'
           value={this.props.value}
           onChangeText={text => this.props.onChange(text)}
+          underlineColor='white'
           outlineStyle={{
             borderRadius: 20,
           }}
-          outlineColor='#E1E1E7'
-          activeOutlineColor='#4D84DF'
+          outlineColor={this.props.error ? '#FA5D5D' : '#E1E1E7'}
+          activeOutlineColor={this.props.error ? '#FA5D5D' : '#4D84DF'}
           style={{
             backgroundColor: '#e1e6eb',
             fontFamily: 'Hind-bold',
             color: 'rgba(7, 21, 42, 0.5)',
             width: '100%',
             height: 60,
-            margin: 10,
           }}
           contentStyle={{
             fontFamily: 'Hind',
           }}
+          selectionColor='blue'
           right={
             <TextInput.Icon
               icon={this.props.password ? 'eye' : this.props.icon}
@@ -38,6 +41,10 @@ export default class InputField extends React.Component {
           }
           secureTextEntry={this.props.password}
         />
+        <HelperText style={{color: '#FA5D5D'}} type="error" visible={this.props.error || false}>
+          {this.props.hText}
+        </HelperText>
+      </View>
     )
   }
 }
@@ -47,5 +54,7 @@ InputField.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   icon: PropTypes.string,
-  password: PropTypes.bool
+  password: PropTypes.bool,
+  error: PropTypes.bool,
+  hText: PropTypes.string
 };

@@ -26,6 +26,8 @@ export default function LoginScreen({ navigation }) {
           onChange={setText}
           label="Email"
           icon="email"
+          error={false}
+          hText="Email não cadastrado"
         />
         <InputField 
           value={pass}
@@ -33,6 +35,8 @@ export default function LoginScreen({ navigation }) {
           label="Senha"
           icon="eye"
           password
+          error={false}
+          hText="Senha incorreta"
         />
 
         <ButtonSubmit

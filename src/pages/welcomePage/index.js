@@ -8,7 +8,7 @@ export default function HomeScreen({ navigation }) {
   const change = () => navigation.navigate('Login')
 
   useEffect(()=>{
-    setInterval(change, 3000)
+    //setInterval(change, 3000)
   }, [])
 
   return (
@@ -18,7 +18,7 @@ export default function HomeScreen({ navigation }) {
         style={style.background}
       />
       <Image style={style.logo} source={require('../../../assets/logoType.png')} />
-      <Text style={style.text}>
+      <Text style={style.text} onPress={change}>
         Ofertas
         <Text style={{fontFamily: 'Montserrat-bold'}}> exclusivas </Text>
         todo mês

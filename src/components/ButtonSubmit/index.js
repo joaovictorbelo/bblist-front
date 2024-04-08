@@ -13,8 +13,7 @@ export default class ButtonSubmit extends React.Component {
         style={{
           borderRadius: 50,
           width: '80%',
-          marginTop: 40,
-          marginBottom: 20
+          marginVertical: 20
         }} 
         start={{ y: 1, x: 1 }} end={{ y: 0, x: 1 }}
       >

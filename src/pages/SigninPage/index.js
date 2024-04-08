@@ -1,7 +1,8 @@
-import { Text, View, Image } from 'react-native';
+import { Text, View } from 'react-native';
 import { useState } from 'react';
 import InputField from '../../components/InputField';
 import ButtonSubmit from '../../components/ButtonSubmit';
+import AppHeader from '../../components/AppHeader';
 import { Button } from 'react-native-paper'
 
 import style from './style'
@@ -12,13 +13,13 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={style.container}>
-      <Image style={style.logo} source={require('../../../assets/logoTypePink.png')} />
+      <AppHeader />
       
       <View style={style.loginForm}>
         <Text style={style.text}>
-          <Text style={{fontFamily: 'Montserrat-bold'}}> Ola Lojista </Text>
+          <Text style={{fontFamily: 'Montserrat-bold'}}> Primeiro acesso? </Text>
           {'\n'}
-          Entre com email cadastrado!
+          Registre-se e tenha acesso a ofertas mensais exclusivas!
         </Text>
 
         <InputField 
