@@ -20,10 +20,10 @@ export default class InputField extends React.Component {
           outlineStyle={{
             borderRadius: 20,
           }}
-          outlineColor={this.props.error ? '#FA5D5D' : '#E1E1E7'}
+          outlineColor={this.props.error ? '#FA5D5D' : 'rgba(165, 183, 223, 0.2)'}
           activeOutlineColor={this.props.error ? '#FA5D5D' : '#4D84DF'}
           style={{
-            backgroundColor: '#e1e6eb',
+            backgroundColor: 'rgba(165, 183, 223, 0.2)',
             fontFamily: 'Hind-bold',
             color: 'rgba(7, 21, 42, 0.5)',
             width: '100%',
@@ -63,5 +63,5 @@ InputField.propTypes = {
   password: PropTypes.bool,
   error: PropTypes.bool,
   hText: PropTypes.string,
-  locked: PropTypes.bool
+  locked: PropTypes.bool,
 };

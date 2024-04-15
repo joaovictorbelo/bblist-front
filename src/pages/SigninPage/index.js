@@ -1,10 +1,11 @@
 import { Text, View, ScrollView } from "react-native";
 import { useState, useMemo, useEffect } from "react";
+import { Button } from "react-native-paper";
+
 import InputField from "../../components/InputField";
 import ButtonSubmit from "../../components/ButtonSubmit";
 import AppHeader from "../../components/AppHeader";
 import cities from '../../utils/cities'
-import { Button } from "react-native-paper";
 
 import { Autocomplete } from "@telenko/react-native-paper-autocomplete";
 
@@ -38,7 +39,7 @@ export default function SigninScreen({ navigation }) {
 
   return (
     <View style={style.container}>
-      <AppHeader goBackButton={navigation.goBack} />
+      <AppHeader goBackButton={navigation.goBack} elementList={['return', 'logo']}/>
 
       <Text style={style.text}>
         <Text style={{ fontFamily: "Montserrat-bold" }}>
@@ -152,20 +153,22 @@ export default function SigninScreen({ navigation }) {
         <ButtonSubmit label="Cadastrar" onClick={() => console.log("Pressed")} />
       </ScrollView>
 
-      <Text
-        style={{
-          fontFamily: "Montserrat",
-        }}
-      >
-        Já é cadastrado?{" "}
+      <View style={{display: "flex", flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+        <Text
+          style={{
+            fontFamily: "Montserrat",
+          }}
+        >
+          Já é cadastrado?{" "}
+        </Text>
         <Button
           labelStyle={style.links}
           mode="text"
-          onPress={() => console.log("Pressed")}
+          onPress={() => navigation.navigate("Login")}
         >
           Entre aqui
         </Button>
-      </Text>
+        </View>
     </View>
   );
 }

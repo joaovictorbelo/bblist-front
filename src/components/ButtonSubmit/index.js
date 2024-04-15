@@ -9,7 +9,7 @@ export default class ButtonSubmit extends React.Component {
   }
   render() { 
     return (
-      <LinearGradient colors={["#407BDC", '#85AEEA']}
+      <LinearGradient colors={this.props.disabled ? ["#ccc", '#ddd'] : ["#407BDC", '#85AEEA']}
         style={{
           borderRadius: 50,
           width: '80%',

@@ -1,5 +1,7 @@
 import { Text, View, Image } from "react-native";
 import { useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 import InputField from "../../components/InputField";
 import ButtonSubmit from "../../components/ButtonSubmit";
 import { Button } from "react-native-paper";
@@ -22,15 +24,18 @@ export default function LoginScreen({ navigation }) {
     setLoading(true);
     setMailError(false);
     setPassError(false);
-    let userList = users.Users;
-    userList = userList.filter(user => user.email === mail);
+    const userList = users.Users;
+    const user = userList.filter(user => user.email === mail)[0];
 
-    if (userList.length === 0){
+    if (!user){
       setMailError(true);
-    } else if (userList[0].pass !== pass){
+    } else if (user.pass !== pass){
       setPassError(true);
     } else {
-      navigation.navigate('Offers')
+      navigation.navigate('Offers');
+      const UserLoc = {'estado': user.state, 'cidade': user.city, 'regiao': user.reg}
+      AsyncStorage.setItem('location', JSON.stringify(UserLoc));
+      AsyncStorage.setItem('profPic', user.img);
     }
     
     setLoading(false);
@@ -85,12 +90,14 @@ export default function LoginScreen({ navigation }) {
         </Button>
       </View>
 
-      <Text
-        style={{
-          fontFamily: "Montserrat",
-        }}
-      >
-        Ainda não é cadastrado?{" "}
+      <View style={{display: "flex", flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+        <Text
+          style={{
+            fontFamily: "Montserrat",
+          }}
+        >
+          Ainda não é cadastrado?{" "}
+        </Text>
         <Button
           labelStyle={style.links}
           mode="text"
@@ -98,7 +105,7 @@ export default function LoginScreen({ navigation }) {
         >
           Crie sua conta
         </Button>
-      </Text>
+      </View>
     </View>
   );
 }

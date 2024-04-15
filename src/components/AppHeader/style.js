@@ -16,4 +16,15 @@ export default styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
+    locWrapper: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    locText: {
+        color: '#07152A',
+        fontFamily: 'Montserrat',
+        fontSize: 15,
+        textAlign: 'left',
+    },
   });

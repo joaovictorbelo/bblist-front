@@ -7,6 +7,7 @@ export default styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingBottom: 30,
+        backgroundColor: '#fefefe'
     },
     logo: {
         height: '9%',
@@ -28,10 +29,7 @@ export default styles = StyleSheet.create({
         marginVertical: 30,
     },
     links: {
-        marginTop: 10,
-        marginBottom: 0,
-        marginLeft: 0,
-        marginRight: 0,
+        marginHorizontal: 0,
         fontFamily: 'Montserrat',
         color: "#407BDC",
     }

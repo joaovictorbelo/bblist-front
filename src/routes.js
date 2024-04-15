@@ -5,6 +5,7 @@ import WelcomePage from './pages/welcomePage'
 import LoginPage from './pages/loginPage'
 import SigninPage from './pages/SigninPage'
 import OffersPage from './pages/OffersPage'
+import TestPage from './pages/TestPage'
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,7 @@ export default function Router() {
         <Stack.Screen name="Home" component={WelcomePage} />
         <Stack.Screen name="Login" component={LoginPage} />
         <Stack.Screen name="Signin" component={SigninPage} />
-        <Stack.Screen name="Offers" component={OffersPage} />
+        <Stack.Screen name="Offers" component={TestPage} />
       </Stack.Navigator>
     )
 }
