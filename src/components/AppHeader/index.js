@@ -48,7 +48,7 @@ export default class AppHeader extends React.Component {
         </View>
       ),
       'image': (
-        <Avatar.Image key='profPic' size={50} source={{uri: this.props.image || ''}} />
+        <Avatar.Image key='profPic' size={50} source={{uri: this.props.image || 'none'}} />
       ),
     };
     return (

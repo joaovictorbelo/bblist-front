@@ -32,10 +32,10 @@ export default function LoginScreen({ navigation }) {
     } else if (user.pass !== pass){
       setPassError(true);
     } else {
-      navigation.navigate('Offers');
       const UserLoc = {'estado': user.state, 'cidade': user.city, 'regiao': user.reg}
       AsyncStorage.setItem('location', JSON.stringify(UserLoc));
       AsyncStorage.setItem('profPic', user.img);
+      navigation.navigate('UserArea');
     }
     
     setLoading(false);
