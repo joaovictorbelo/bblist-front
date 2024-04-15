@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Searchbar } from 'react-native-paper';
 
 import AppHeader from "../../components/AppHeader";
+import OfferCard from "../../components/OfferCard";
 
 import style from './style'
 
@@ -39,19 +40,25 @@ export default function OffersPage() {
     <View style={style.container}>
       <AppHeader elementList={['local', 'image']} userLoc={location} image={profPic}/>
       <View style={{width: '90%'}}>
-        <Text style={{fontFamily: 'Montserrat-bold', fontSize: 40, color: '#07152A'}}>Ofertas</Text>
-        <Text style={{fontFamily: 'Hind-bold', fontSize: 17, color: '#07152A'}}>
+        <Text style={style.title}>Ofertas</Text>
+        <Text style={style.subtitle}>
           Disponiveis para o mês de 
           <Text style={{color: "#407BDC"}}> {getMonth()}</Text>
         </Text>
         <Searchbar
-          placeholder="Search"
+          placeholder="Buscar ofertas..."
           onChangeText={setSearchQuery}
           value={searchQuery}
-          style={{
-            backgroundColor: 'rgba(165, 183, 223, 0.2)'
+          style={style.search}
+          inputStyle={{
+            fontFamily: 'Hind',
+            color: '#07152A'
           }}
         />
+      </View>
+      <View style={{width: '90%'}}>
+        <Text style={style.subsection}>Principais ofertas na sua região</Text>
+        <OfferCard />
       </View>
     </View>
   );
