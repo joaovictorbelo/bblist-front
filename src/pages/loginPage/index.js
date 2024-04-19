@@ -50,13 +50,14 @@ export default function LoginScreen({ navigation }) {
 
       <View style={style.loginForm}>
         <Text style={style.text}>
-          <Text style={{ fontFamily: "Montserrat-bold" }}> Ola Lojista </Text>
+          <Text style={{ fontFamily: "Montserrat-bold" }}> Olá Lojista </Text>
           {"\n"}
           Entre com email cadastrado!
         </Text>
 
         <InputField
           value={mail}
+          keyboard='email-address'
           onChange={setMail}
           label="Email"
           icon="email"

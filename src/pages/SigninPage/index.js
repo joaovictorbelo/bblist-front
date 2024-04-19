@@ -13,6 +13,11 @@ import style from "./style";
 export default function SigninScreen({ navigation }) {
   const [pass, setPass] = useState("");
   const [passConf, setPassConf] = useState("");
+  const [passError, setPassError] = useState(false);
+  
+  const [passVis, setPassVis] = useState("");
+  const [passConfVis, setPassConfVis] = useState("");
+
   const [userData, setUserData] = useState({
     email: "",
     name: "",
@@ -56,19 +61,29 @@ export default function SigninScreen({ navigation }) {
       >
         <InputField
           value={userData.email}
+          keyboard='email-address'
           onChange={(value) => setUserData({ ...userData, email: value })}
           label="Email"
           icon="email"
         />
         <InputField
           value={pass}
-          onChange={setPass}
+          keyboard='visible-password'
+          onChange={(e) => {
+            setPass(e);
+            setPassError(/^(?=.*[A-Za-z].*)(?=.*[0-9].*)[A-Za-z0-9]{8,}$/.test(e))
+          }}
           label="Senha"
-          icon="eye"
-          password
+          icon={passVis ? 'eye-off' : 'eye'}
+          iconAction={() => {setPassVis(!passVis)}}
+          password={!passVis}
+          error={passError}
+          info={true}
+          hText={"*Sua senha deve conter no mínimo 8 caracteres com pelo menos uma letra e um número"}
         />
         <InputField
           value={passConf}
+          keyboard='visible-password'
           onChange={setPassConf}
           label="Confirmar senha"
           icon="eye"
@@ -86,21 +101,25 @@ export default function SigninScreen({ navigation }) {
         />
         <InputField
           value={userData.tel}
+          keyboard='phone-pad'
           onChange={(value) => setUserData({ ...userData, tel: value })}
           label="Telefone"
         />
         <InputField
           value={userData.insc}
+          keyboard='number-pad'
           onChange={(value) => setUserData({ ...userData, insc: value })}
           label="Inscrição estadual"
         />
         <InputField
           value={userData.cnpj}
+          keyboard='number-pad'
           onChange={(value) => setUserData({ ...userData, cnpj: value })}
           label="CNPJ"
         />
         <InputField
           value={userData.cep}
+          keyboard='number-pad'
           onChange={(value) => setUserData({ ...userData, cep: value })}
           label="CEP"
         />

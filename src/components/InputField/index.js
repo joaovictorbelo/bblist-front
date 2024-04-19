@@ -14,16 +14,17 @@ export default class InputField extends React.Component {
           editable={!this.props.locked}
           label={this.props.label}
           mode='outlined'
+          keyboardType={this.props.keyboard || 'default'}
           value={this.props.value}
           onChangeText={text => this.props.onChange(text)}
           underlineColor='white'
           outlineStyle={{
             borderRadius: 20,
           }}
-          outlineColor={this.props.error ? '#FA5D5D' : 'rgba(165, 183, 223, 0.2)'}
+          outlineColor={this.props.error ? '#FA5D5D' : 'rgba(165, 183, 200, 0.2)'}
           activeOutlineColor={this.props.error ? '#FA5D5D' : '#4D84DF'}
           style={{
-            backgroundColor: 'rgba(165, 183, 223, 0.2)',
+            backgroundColor: 'rgba(165, 183, 200, 0.2)',
             fontFamily: 'Hind-bold',
             color: 'rgba(7, 21, 42, 0.5)',
             width: '100%',
@@ -46,7 +47,7 @@ export default class InputField extends React.Component {
           }
           secureTextEntry={this.props.password}
         />
-        <HelperText style={{color: '#FA5D5D'}} type="error" visible={this.props.error || false}>
+        <HelperText style={{color: this.props.error ? '#FA5D5D' : "#a2a2a2"}} type="error" visible={(this.props.error || this.props.info) || false}>
           {this.props.hText}
         </HelperText>
       </View>
@@ -62,6 +63,8 @@ InputField.propTypes = {
   icon: PropTypes.string,
   password: PropTypes.bool,
   error: PropTypes.bool,
+  info: PropTypes.bool,
   hText: PropTypes.string,
   locked: PropTypes.bool,
+  keyboard: PropTypes.string,
 };

@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Searchbar } from 'react-native-paper';
@@ -39,27 +39,51 @@ export default function OffersPage() {
   return (
     <View style={style.container}>
       <AppHeader elementList={['local', 'image']} userLoc={location} image={profPic}/>
-      <View style={{width: '90%'}}>
-        <Text style={style.title}>Ofertas</Text>
-        <Text style={style.subtitle}>
-          Disponiveis para o mês de 
-          <Text style={{color: "#407BDC"}}> {getMonth()}</Text>
-        </Text>
-        <Searchbar
-          placeholder="Buscar ofertas..."
-          onChangeText={setSearchQuery}
-          value={searchQuery}
-          style={style.search}
-          inputStyle={{
-            fontFamily: 'Hind',
-            color: '#07152A'
-          }}
-        />
-      </View>
-      <View style={{width: '90%'}}>
-        <Text style={style.subsection}>Principais ofertas na sua região</Text>
-        <OfferCard />
-      </View>
+      <ScrollView
+        style={{width: '100%', marginTop: 30}}
+        contentContainerStyle={{
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: '100%'
+        }}
+      >
+        <View style={{width: '90%'}}>
+          <Text style={style.title}>Ofertas</Text>
+          <Text style={style.subtitle}>
+            Disponiveis para o mês de 
+            <Text style={{color: "#407BDC"}}> {getMonth()}</Text>
+          </Text>
+          <Searchbar
+            placeholder="Buscar ofertas..."
+            onChangeText={setSearchQuery}
+            value={searchQuery}
+            style={style.search}
+            inputStyle={{
+              fontFamily: 'Hind',
+              color: '#07152A'
+            }}
+          />
+        </View>
+        <View style={{width: '90%', marginBottom: 15}}>
+          <Text style={style.subsection}>Principais ofertas na sua região</Text>
+          <ScrollView
+            horizontal
+            style={{
+              width: '110%',
+              left: '-5%'
+            }}
+          >
+            <OfferCard />
+            <OfferCard />
+          </ScrollView>
+        </View>
+        <View style={{width: '90%'}}>
+          <Text style={style.subsection}>Veja Também</Text>
+          <View style={{width: '100%', height: 80, backgroundColor: '#ADC4FF', marginBottom: 20, borderRadius: 15, justifyContent: 'center'}}>
+            <Text style={{textAlign: 'center'}}>Pesquisa de produtos já disponivel!</Text>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
   }

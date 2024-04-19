@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BottomNavigation, Text, Icon } from 'react-native-paper';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SvgXml } from 'react-native-svg';
 
 import home from '../../../assets/icons/home-outline.js';
@@ -21,6 +22,8 @@ const iconList = {
   help: help
 }
 
+const InnerStack = createNativeStackNavigator();
+
 const MyComponent = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
@@ -31,7 +34,15 @@ const MyComponent = () => {
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    home: OffersPage,
+    home: () => (
+      <InnerStack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <InnerStack.Screen name="Offers" component={OffersPage} />
+      </InnerStack.Navigator>
+    ),
     notifications: NotificationsRoute,
     orders: OrdersRoute,
     help: HelpRoute,
@@ -50,14 +61,12 @@ const MyComponent = () => {
         onIndexChange={setIndex}
         renderScene={renderScene}
         renderIcon={icons}
-        renderLabel={() => (
-          <View style={{marginBottom: '-20'}}/>
-        )}
+        activeColor="#407BDC"
         barStyle={{
           backgroundColor: 'transparent',
           width: '90%',
           zIndex: 2,
-          height: 60,
+          height: 70,
           marginLeft: 'auto',
           marginRight: 'auto',
         }}
@@ -75,8 +84,8 @@ const MyComponent = () => {
           position: 'absolute',
           zIndex: 1,
           width: '100%',
-          height: 60,
-          bottom: 20
+          height: 70,
+          bottom: 15
         }}
       >
         <View style={{
@@ -84,11 +93,11 @@ const MyComponent = () => {
           zIndex: 1,
           position: 'relative',
           width: '90%',
-          height: 60,
+          height: 70,
           marginLeft: 'auto',
           marginRight: 'auto',
           borderRadius: 20,
-          backgroundColor: 'rgba(165, 183, 223, 0.2)',
+          backgroundColor: 'rgba(165, 183, 200, 0.2)',
         }}/>
       </View>
     </View>

@@ -13,12 +13,13 @@ export default class OfferCard extends React.Component {
         <ImageBackground
           source={{uri: 'https://static.babycenternet.com.br/produto/BERCO-AMALFI-PLUS-MEL-JC-MOVEIS_D.webp'}} 
           imageStyle={{ borderRadius: 10}}
-          style={{width: 280,
-            height: 280,
+          style={{width: 250,
+            height: 250,
             padding: 10,
             display: 'flex',
             justifyContent: 'space-between',
-            borderRadius: 10
+            borderRadius: 10,
+            marginHorizontal: 10,
           }}
         >
           <View
@@ -42,22 +43,24 @@ export default class OfferCard extends React.Component {
           </View>
           <View 
             style={{
-              width: 260,
-              height: 105,
+              width: 230,
+              height: 100,
               backgroundColor: 'rgba(255,255,255,0.8)',
               borderRadius: 10,
-              padding: 10,
+              padding: 5,
+              paddingHorizontal: 7,
               display: 'flex',
               flexDirection: 'row',
               flexWrap: 'wrap',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              alignContent: 'space-between'
             }}
           >
             <Text
               style={{
                 fontFamily: 'Montserrat-bold',
                 color: '#07152A',
-                fontSize: 18
+                fontSize: 15
               }}
             >
               Berço de madeira Baby Sleep

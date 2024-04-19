@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 
 export default styles = StyleSheet.create({
     logo: {
-        width: 150,
+        width: 90,
         height: 40,
         resizeMode: 'contain',
     },
@@ -19,7 +19,8 @@ export default styles = StyleSheet.create({
     locWrapper: {
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        left: -5
     },
     locText: {
         color: '#07152A',

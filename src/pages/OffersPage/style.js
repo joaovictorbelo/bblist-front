@@ -6,11 +6,12 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#fefefe'
+        backgroundColor: '#fefefe',
+        paddingTop: 30,
     },
     title: {
         fontFamily: 'Montserrat-bold',
-        fontSize: 40,
+        fontSize: 35,
         color: '#07152A',
         marginBottom: 5,
     },
@@ -21,12 +22,15 @@ export default styles = StyleSheet.create({
         marginBottom: 5,
     },
     search: {
-        backgroundColor: 'rgba(165, 183, 223, 0.2)',
+        backgroundColor: 'rgba(165, 183, 200, 0.2)',
         borderRadius: 16,
+        marginBottom: 15,
+        height: 50
     },
     subsection: {
         fontFamily: 'Montserrat-bold',
-        fontSize: 16,
-        color: '#07152A'
+        fontSize: 17,
+        color: '#07152A',
+        marginBottom: 10
     },
   });

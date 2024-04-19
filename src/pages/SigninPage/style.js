@@ -6,11 +6,11 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingBottom: 30,
+        paddingVertical: 30,
         backgroundColor: '#fefefe'
     },
     logo: {
-        height: '8%',
+        height: '15%',
         resizeMode: 'contain',
         marginTop: 50
     },

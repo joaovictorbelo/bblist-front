@@ -37,7 +37,7 @@ export default class AppHeader extends React.Component {
       ),
       'local': (
         <View key="local" style={style.locWrapper}>
-          <Icon source="map-marker" size={50} color="#407BDC" />
+          <Icon source="map-marker" size={40} color="#407BDC" />
           <Text style={style.locText}>
             <Text style={{ fontFamily: "Montserrat-bold", fontSize: 17 }}>
               Região {this.props.userLoc?.regiao}
