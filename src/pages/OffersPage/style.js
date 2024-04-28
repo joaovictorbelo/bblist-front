@@ -28,5 +28,19 @@ export default styles = StyleSheet.create({
         borderRadius: 16,
         height: 50,
         width: '80%'
+    },
+    chips: {
+        width: '100%',
+        marginTop: 10,
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'flex-start'
+    },
+    modal: {
+        backgroundColor: 'white',
+        width: '80%',
+        padding: 20,
+        marginHorizontal: '10%'
     }
   });

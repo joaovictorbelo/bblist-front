@@ -1,10 +1,11 @@
 import { ScrollView, Text, View } from 'react-native';
 import { useEffect, useState } from 'react'
-import { Searchbar, Button } from 'react-native-paper';
+import {  Modal, Portal, Searchbar } from 'react-native-paper';
 
 import AppHeader from "../../components/AppHeader";
 import HorizontalCard from "../../components/HorizontalCard";
 import FilterButton from "../../components/FilterButton";
+import FilterChip from "../../components/FilterChip";
 
 import style from './style'
 
@@ -12,11 +13,35 @@ const offers = require('../../utils/mock/mockOffers.json');
 
 export default function OffersPage({ route, navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [visible, setVisible] = useState(false);
+  const [filters, setFilters] = useState([
+    {
+      type: 'date',
+      value: new Date().toLocaleDateString('pt-br', {month:"short", day:"numeric"})
+    },
+    {
+      type: 'caterogy',
+      value: 'Móveis'
+    },
+  ])
 
-  const { filters, location } = route.params;
+  const { propFilters, location } = route.params;
+
+  const removeFilter = (value) => {
+    const newFilters = filters.filter((e) => e.value != value);
+    setFilters(newFilters);
+  }
+
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
 
   return (
     <View style={style.container}>
+      <Portal>
+        <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={style.modal}>
+          <Text>Example Modal.  Click outside this area to dismiss.</Text>
+        </Modal>
+      </Portal>
       <AppHeader elementList={['return', 'local']} userLoc={location} goBackButton={navigation.goBack}/>
       <ScrollView
         style={{width: '100%', marginTop: 30}}
@@ -38,7 +63,13 @@ export default function OffersPage({ route, navigation }) {
               color: '#07152A'
             }}
           />
-          <FilterButton />
+          <FilterButton onPress={showModal} selected={filters.length != 0}/>
+          <View style={style.chips}>
+            {filters.map(
+              (filter) => (
+                <FilterChip key={filter.value} filter={filter} close={removeFilter}/>
+            ))}
+          </View>
         </View>
         <ScrollView style={{width: '90%', marginBottom: 15}}>
           {offers.Offers.map(

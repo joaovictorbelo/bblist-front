@@ -45,9 +45,7 @@ export default class  HorizontalCard extends React.Component {
           >
             <View
               style={{
-                width: 160,
                 height: 20,
-                backgroundColor: 'rgba(255,255,255,0.8)',
                 borderRadius: 10,
                 alignItems: 'center'
               }}

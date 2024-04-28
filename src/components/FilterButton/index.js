@@ -12,30 +12,23 @@ export default class FilterButton extends React.Component {
         icon="filter-outline"
         mode="contained"
         containerColor='rgba(165, 183, 200, 0.2)'
-        iconColor="grey"
+        iconColor={this.props.selected ? "#407BDC" : "grey"}
         style={{
           borderRadius: 16,
+          borderWidth: 2,
+          borderColor: this.props.selected ? "#407BDC" : "transparent",
           width: 50,
           height: 50,
           marginVertical: 0
         }}
         size={28}
-        onPress={() => console.log('Pressed')}
+        onPress={this.props.onPress}
       />
     )
   }
 }
 
 FilterButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  iconAction: PropTypes.func,
-  icon: PropTypes.string,
-  password: PropTypes.bool,
-  error: PropTypes.bool,
-  info: PropTypes.bool,
-  hText: PropTypes.string,
-  locked: PropTypes.bool,
-  keyboard: PropTypes.string,
+  selected: PropTypes.bool,
+  onPress: PropTypes.func,
 };
