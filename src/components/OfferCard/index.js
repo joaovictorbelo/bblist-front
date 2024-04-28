@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { View, Text, ImageBackground } from 'react-native'
+import { View, Text, ImageBackground, Pressable } from 'react-native'
 import { Avatar } from "react-native-paper";
 
 export default class OfferCard extends React.Component { 
@@ -9,9 +9,9 @@ export default class OfferCard extends React.Component {
   }
   render() { 
     return (
-      <View style={{borderRadius: 10}}>
+      <Pressable style={{borderRadius: 10}} onPress={this.props.onClick}>
         <ImageBackground
-          source={{uri: 'https://static.babycenternet.com.br/produto/BERCO-AMALFI-PLUS-MEL-JC-MOVEIS_D.webp'}} 
+          source={{uri: this.props.offer.produtos[0].imagem}} 
           imageStyle={{ borderRadius: 10}}
           style={{width: 250,
             height: 250,
@@ -24,7 +24,6 @@ export default class OfferCard extends React.Component {
         >
           <View
             style={{
-              backgroundColor: 'green',
               width: 160,
               height: 20,
               backgroundColor: 'rgba(255,255,255,0.8)',
@@ -38,7 +37,7 @@ export default class OfferCard extends React.Component {
                 color: '#07152A'
               }}
             >
-              Oferta valida ate 31/03
+              Oferta valida ate <Text style={{color: "#407BDC"}}>{this.props.offer.prazo}</Text>
             </Text>
           </View>
           <View 
@@ -63,7 +62,7 @@ export default class OfferCard extends React.Component {
                 fontSize: 15
               }}
             >
-              Berço de madeira Baby Sleep
+              {this.props.offer.titulo}
             </Text>
             <View
               style={{
@@ -72,8 +71,8 @@ export default class OfferCard extends React.Component {
                 alignItems: "center"
               }}
             >
-              <Avatar.Image size={25} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbjzWhJKM2Pn-XHYvnfccPPt_D97lo3Z-3qUeDQYGugg&s'}} />
-              <Text> Matic Moveis</Text>
+              <Avatar.Image size={25} source={{uri: this.props.offer.fabrica.img}} />
+              <Text> {this.props.offer.fabrica.nome}</Text>
             </View>
             <View
               style={{
@@ -99,19 +98,17 @@ export default class OfferCard extends React.Component {
                   fontSize: 22
                 }}
               >
-                R$ 300
+                R$ {this.props.offer.produtos.reduce((prev, curr) => (prev.valor < curr.valor) ? prev.valor : curr.valor)}
               </Text>
             </View>
           </View>
         </ImageBackground>
-      </View>
+      </Pressable>
     )
   }
 }
 
 OfferCard.propTypes = {
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  loading: PropTypes.bool,
-  disabled: PropTypes.bool
+  offer: PropTypes.object.isRequired,
+  onClick: PropTypes.func
 };

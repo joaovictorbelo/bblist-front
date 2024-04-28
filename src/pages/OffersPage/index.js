@@ -1,6 +1,5 @@
 import { ScrollView, Text, View } from 'react-native';
 import { useEffect, useState } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Searchbar } from 'react-native-paper';
 
 import AppHeader from "../../components/AppHeader";
@@ -8,27 +7,12 @@ import OfferCard from "../../components/OfferCard";
 
 import style from './style'
 
-export default function OffersPage() {
-  const [location, setLocation] = useState({
-    cidade: '',
-    estado: '',
-    regiao: ''
-  });
-  const [profPic, setProfPic] = useState('');
+const offers = require('../../utils/mock/mockOffers.json');
+
+export default function OffersPage({ route, navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(() => {
-    AsyncStorage.getItem('location').then(
-      (value) => {
-        setLocation(JSON.parse(value));
-      }
-    );
-    AsyncStorage.getItem('profPic').then(
-      (value) => {
-        setProfPic(value);
-      }
-    );
-  }, [])
+  const { location, profPic } = route.params;
 
   const getMonth = () => {
     const meses = [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']; 
@@ -73,8 +57,15 @@ export default function OffersPage() {
               left: '-5%'
             }}
           >
-            <OfferCard />
-            <OfferCard />
+            {offers.Offers.map(
+              (offer) => (
+                <OfferCard
+                  key={offer.id}
+                  offer={offer}
+                  onClick={() => navigation.navigate('OfferDetail', {offer: offer})}
+                />
+              )
+            )}
           </ScrollView>
         </View>
         <View style={{width: '90%'}}>

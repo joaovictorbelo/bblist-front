@@ -1,0 +1,72 @@
+{
+    "Offers": [
+        {
+            "id": "1",
+            "titulo": "Berço de madeira Baby Sleep",
+            "produtos": [
+                {
+                    "variant": "Madeira",
+                    "valor": 350,
+                    "imagem": "https://static.babycenternet.com.br/produto/BERCO-AMALFI-PLUS-MEL-JC-MOVEIS_D.webp",
+                    "cor": "#874601"
+                },
+                {
+                    "variant": "Rosa bebê",
+                    "valor": 290,
+                    "imagem": "https://kinderbabydecor.com.br/loja/wp-content/uploads/2021/06/berco-neo-rosa-h120-600x600.png",
+                    "cor": "#E3AAAA"
+                },
+                {
+                    "variant": "Bege",
+                    "valor": 320,
+                    "imagem": "https://kinderbabydecor.com.br/loja/wp-content/uploads/2021/06/berco-neo-bege-f101-600x600.png",
+                    "cor": "##aaa399"
+                }
+            ],
+            "reg": "NE",
+            "active": true,
+            "prazo": "31/03",
+            "minimo": 5,
+            "total": 100,
+            "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
+            "fabrica": {
+                "nome": "Matic Moveis",
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbjzWhJKM2Pn-XHYvnfccPPt_D97lo3Z-3qUeDQYGugg&s"
+            }
+        },
+        {
+            "id": "2",
+            "titulo": "Berço de madeira Baby Sleep",
+            "produtos": [
+                {
+                    "variant": "Madeira",
+                    "valor": 300,
+                    "imagem": "https://static.babycenternet.com.br/produto/BERCO-AMALFI-PLUS-MEL-JC-MOVEIS_D.webp",
+                    "cor": "#874601"
+                },
+                {
+                    "variant": "Rosa bebê",
+                    "valor": 300,
+                    "imagem": "https://kinderbabydecor.com.br/loja/wp-content/uploads/2021/06/berco-neo-rosa-h120-600x600.png",
+                    "cor": "#E3AAAA"
+                },
+                {
+                    "variant": "Bege",
+                    "valor": 300,
+                    "imagem": "https://kinderbabydecor.com.br/loja/wp-content/uploads/2021/06/berco-neo-bege-f101-600x600.png",
+                    "cor": "##aaa399"
+                }
+            ],
+            "reg": "NE",
+            "active": true,
+            "prazo": "31/03",
+            "minimo": 5,
+            "total": 100,
+            "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
+            "fabrica": {
+                "nome": "Matic Moveis",
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbjzWhJKM2Pn-XHYvnfccPPt_D97lo3Z-3qUeDQYGugg&s"
+            }
+        }
+    ]
+}

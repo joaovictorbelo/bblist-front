@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BottomNavigation, Text, Icon } from 'react-native-paper';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { SvgXml } from 'react-native-svg';
 
 import home from '../../../assets/icons/home-outline.js';
@@ -9,6 +10,7 @@ import orders from '../../../assets/icons/bookmark-outline.js';
 import help from '../../../assets/icons/message-circle-outline.js';
 
 import OffersPage from '../OffersPage/index.js';
+import OfferDetailPage from '../OfferDetailPage/index.js';
 import { View } from 'react-native';
 
 const NotificationsRoute = () => <Text>Notificações</Text>;
@@ -23,6 +25,35 @@ const iconList = {
 }
 
 const InnerStack = createNativeStackNavigator();
+var location
+var profPic
+
+AsyncStorage.getItem('location').then(
+  (value) => {
+    location = JSON.parse(value);
+  }
+);
+AsyncStorage.getItem('profPic').then(
+  (value) => {
+    profPic = value;
+  }
+);
+
+const renderScene = BottomNavigation.SceneMap({
+  home: () => (
+    <InnerStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+    >
+      <InnerStack.Screen name="Offers" component={OffersPage} initialParams={{'location':location, 'profPic':profPic}}/>
+      <InnerStack.Screen name="OfferDetail" component={OfferDetailPage} initialParams={{'location':location}}/>
+    </InnerStack.Navigator>
+  ),
+  notifications: NotificationsRoute,
+  orders: OrdersRoute,
+  help: HelpRoute,
+});
 
 const MyComponent = () => {
   const [index, setIndex] = React.useState(0);
@@ -32,21 +63,6 @@ const MyComponent = () => {
     { key: 'orders', title: 'Pedidos'},
     { key: 'help', title: 'Suporte'},
   ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    home: () => (
-      <InnerStack.Navigator
-        screenOptions={{
-          headerShown: false
-        }}
-      >
-        <InnerStack.Screen name="Offers" component={OffersPage} />
-      </InnerStack.Navigator>
-    ),
-    notifications: NotificationsRoute,
-    orders: OrdersRoute,
-    help: HelpRoute,
-  });
 
   const icons = (props) => {
     return (
