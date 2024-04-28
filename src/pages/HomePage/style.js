@@ -11,22 +11,30 @@ export default styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'Montserrat-bold',
-        fontSize: 32,
+        fontSize: 35,
         color: '#07152A',
-        marginVertical: 10,
+        marginBottom: 5,
     },
-    searchArea: {
-        width: '90%',
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        marginBottom: 15
+    subtitle: {
+        fontFamily: 'Hind',
+        fontSize: 17,
+        color: '#07152A',
+        marginBottom: 5,
     },
     search: {
         backgroundColor: 'rgba(165, 183, 200, 0.2)',
         borderRadius: 16,
-        height: 50,
-        width: '80%'
+        marginBottom: 15,
+        height: 50
+    },
+    subsection: {
+        fontFamily: 'Montserrat-bold',
+        fontSize: 17,
+        color: '#07152A',
+    },
+    links: {
+        marginHorizontal: 0,
+        fontFamily: 'Montserrat-bold',
+        color: "#407BDC",
     }
   });

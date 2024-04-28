@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { BottomNavigation, Text, Icon } from 'react-native-paper';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -9,9 +10,9 @@ import notifications from '../../../assets/icons/bell-outline.js';
 import orders from '../../../assets/icons/bookmark-outline.js';
 import help from '../../../assets/icons/message-circle-outline.js';
 
+import HomePage from '../HomePage/index.js';
 import OffersPage from '../OffersPage/index.js';
 import OfferDetailPage from '../OfferDetailPage/index.js';
-import { View } from 'react-native';
 
 const NotificationsRoute = () => <Text>Notificações</Text>;
 const OrdersRoute = () => <Text>Meus Pedidos</Text>;
@@ -46,7 +47,8 @@ const renderScene = BottomNavigation.SceneMap({
         headerShown: false
       }}
     >
-      <InnerStack.Screen name="Offers" component={OffersPage} initialParams={{'location':location, 'profPic':profPic}}/>
+      <InnerStack.Screen name="Home" component={HomePage} initialParams={{'location':location, 'profPic':profPic}}/>
+      <InnerStack.Screen name="Offers" component={OffersPage} initialParams={{'location':location, 'filters': []}}/>
       <InnerStack.Screen name="OfferDetail" component={OfferDetailPage} initialParams={{'location':location}}/>
     </InnerStack.Navigator>
   ),
@@ -58,7 +60,7 @@ const renderScene = BottomNavigation.SceneMap({
 const MyComponent = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'home', title: 'Ofertas'},
+    { key: 'home', title: 'Home'},
     { key: 'notifications', title: 'Notificações'},
     { key: 'orders', title: 'Pedidos'},
     { key: 'help', title: 'Suporte'},
