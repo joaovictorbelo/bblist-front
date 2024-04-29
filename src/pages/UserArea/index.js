@@ -12,6 +12,7 @@ import help from '../../../assets/icons/message-circle-outline.js';
 
 import HomePage from '../HomePage/index.js';
 import OffersPage from '../OffersPage/index.js';
+import OrderPage from '../OrderPage/index.js';
 import OfferDetailPage from '../OfferDetailPage/index.js';
 
 const NotificationsRoute = () => <Text>Notificações</Text>;
@@ -49,6 +50,7 @@ const renderScene = BottomNavigation.SceneMap({
     >
       <InnerStack.Screen name="Home" component={HomePage} initialParams={{'location':location, 'profPic':profPic}}/>
       <InnerStack.Screen name="Offers" component={OffersPage} initialParams={{'location':location, 'propFilters': []}}/>
+      <InnerStack.Screen name="Order" component={OrderPage} initialParams={{'location':location}}/>
       <InnerStack.Screen name="OfferDetail" component={OfferDetailPage} initialParams={{'location':location}}/>
     </InnerStack.Navigator>
   ),

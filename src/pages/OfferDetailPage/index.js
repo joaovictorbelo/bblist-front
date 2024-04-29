@@ -68,8 +68,8 @@ export default function OfferPage({ route, navigation }) {
               <Pressable
                 key={product.variant}
                 style={{
-                  width: 30, 
-                  height: 30,
+                  width: 35, 
+                  height: 35,
                   backgroundColor: product.cor,
                   borderRadius: 50,
                   margin: 7,
@@ -189,9 +189,10 @@ export default function OfferPage({ route, navigation }) {
         
         <ButtonSubmit
           label="Fazer pedido"
-          onClick={() => {}}
+          onClick={() => {navigation.navigate('Order', {offer: offer})}}
           loading={false}
           stye={{}}
+          grad={["#0CB18A", '#38D1AD']}
         />
       </ScrollView>
     </View>

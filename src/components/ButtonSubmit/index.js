@@ -9,7 +9,7 @@ export default class ButtonSubmit extends React.Component {
   }
   render() { 
     return (
-      <LinearGradient colors={this.props.disabled ? ["#eee", '#eee'] : ["#407BDC", '#85AEEA']}
+      <LinearGradient colors={this.props.disabled ? ["#eee", '#eee'] : this.props.grad}
         style={{
           borderRadius: 50,
           width: '80%',
@@ -48,5 +48,6 @@ ButtonSubmit.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   loading: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  grad: PropTypes.arrayOf(PropTypes.string)
 };

@@ -27,6 +27,7 @@
             "active": true,
             "prazo": "31/03",
             "minimo": 5,
+            "frete": 0.05,
             "total": 100,
             "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
             "fabrica": {
@@ -61,6 +62,7 @@
             "active": true,
             "prazo": "31/03",
             "minimo": 5,
+            "frete": 0.05,
             "total": 100,
             "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
             "fabrica": {
@@ -95,6 +97,7 @@
             "active": true,
             "prazo": "31/03",
             "minimo": 5,
+            "frete": 0.05,
             "total": 100,
             "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
             "fabrica": {
@@ -129,6 +132,7 @@
             "active": true,
             "prazo": "31/03",
             "minimo": 5,
+            "frete": 0.05,
             "total": 100,
             "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
             "fabrica": {
@@ -163,6 +167,7 @@
             "active": true,
             "prazo": "31/03",
             "minimo": 5,
+            "frete": 0.05,
             "total": 100,
             "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
             "fabrica": {
@@ -197,6 +202,7 @@
             "active": true,
             "prazo": "31/03",
             "minimo": 5,
+            "frete": 0.05,
             "total": 100,
             "descricao": "Berço de madeira com otima resistencia e qualidade incomparavel no mercado! A matic Moveis é uma marca muito conceituada no mercado e essa promoção é uma oportunidade única com 17% de desconto por peça!",
             "fabrica": {

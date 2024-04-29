@@ -80,6 +80,7 @@ export default function LoginScreen({ navigation }) {
           onClick={handleLogin}
           loading={loading}
           disabled={!(mail && pass)}
+          grad={["#407BDC", '#85AEEA']}
         />
 
         <Button

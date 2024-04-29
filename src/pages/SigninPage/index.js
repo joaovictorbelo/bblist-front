@@ -169,7 +169,7 @@ export default function SigninScreen({ navigation }) {
           label="Endereço"
         />
 
-        <ButtonSubmit label="Cadastrar" onClick={() => console.log("Pressed")} />
+        <ButtonSubmit label="Cadastrar" onClick={() => console.log("Pressed")} grad={["#407BDC", '#85AEEA']}/>
       </ScrollView>
 
       <View style={{display: "flex", flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
