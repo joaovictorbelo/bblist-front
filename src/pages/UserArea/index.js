@@ -48,7 +48,7 @@ const renderScene = BottomNavigation.SceneMap({
       }}
     >
       <InnerStack.Screen name="Home" component={HomePage} initialParams={{'location':location, 'profPic':profPic}}/>
-      <InnerStack.Screen name="Offers" component={OffersPage} initialParams={{'location':location, 'filters': []}}/>
+      <InnerStack.Screen name="Offers" component={OffersPage} initialParams={{'location':location, 'propFilters': []}}/>
       <InnerStack.Screen name="OfferDetail" component={OfferDetailPage} initialParams={{'location':location}}/>
     </InnerStack.Navigator>
   ),

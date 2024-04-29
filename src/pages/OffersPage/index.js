@@ -10,6 +10,7 @@ import FilterChip from "../../components/FilterChip";
 import style from './style'
 
 const offers = require('../../utils/mock/mockOffers.json');
+const today = new Date();
 
 export default function OffersPage({ route, navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,15 +18,15 @@ export default function OffersPage({ route, navigation }) {
   const [filters, setFilters] = useState([
     {
       type: 'date',
-      value: new Date().toLocaleDateString('pt-br', {month:"short", day:"numeric"})
-    },
-    {
-      type: 'caterogy',
-      value: 'Móveis'
-    },
+      value: new Date(today.getFullYear(), today.getMonth()+1, 0).toLocaleDateString('pt-br', {month:"short", day:"numeric"})
+    }
   ])
 
   const { propFilters, location } = route.params;
+
+  useEffect(() => {
+    setFilters(filters.concat(propFilters));
+  }, [propFilters])
 
   const removeFilter = (value) => {
     const newFilters = filters.filter((e) => e.value != value);

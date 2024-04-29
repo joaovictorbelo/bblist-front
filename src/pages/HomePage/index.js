@@ -97,7 +97,7 @@ export default function HomePage({ route, navigation }) {
                   key={categ.nome}
                   imagem={categ.imagem || ''}
                   nome={categ.nome}
-                  onClick={() => console.log('teste')}
+                  onClick={() => navigation.navigate('Offers', {propFilters: [{type: 'category', value: categ.nome}]})}
                 />
               )
             )}
